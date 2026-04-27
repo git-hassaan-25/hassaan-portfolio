@@ -33,7 +33,7 @@ export const getProjectsStyles = (mode: ThemeMode, accentPrimary: string, accent
     gap: { xs: 3, md: 4 },
   },
   card: {
-    p: { xs: 3.5, md: 4.5 },
+    p: { xs: 2.5, md: 4.5 },
     border: '1px solid',
     borderColor: 'divider',
     borderRadius: mode === 'aurora' ? '20px' : mode === 'chalk' ? '8px' : '4px',

@@ -22,7 +22,7 @@ export const getEducationStyles = (mode: ThemeMode, accentPrimary: string, accen
     mb: 6,
   },
   card: {
-    p: { xs: 4, md: 6 },
+    p: { xs: 3, md: 6 },
     border: '1px solid',
     borderColor: 'divider',
     borderRadius: mode === 'aurora' ? '20px' : mode === 'chalk' ? '4px' : '2px',
@@ -78,7 +78,7 @@ export const getEducationStyles = (mode: ThemeMode, accentPrimary: string, accen
     bottom: -30,
     fontFamily: '"Syne", sans-serif',
     fontWeight: 800,
-    fontSize: '8rem',
+    fontSize: { xs: '4rem', md: '8rem' },
     color: accentPrimary,
     opacity: 0.03,
     lineHeight: 1,

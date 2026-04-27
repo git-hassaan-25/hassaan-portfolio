@@ -9,8 +9,8 @@ export default function Hero() {
   return (
     <Box id="about" component="section" sx={s.section}>
       {/* Ambient orbs */}
-      <Box sx={{ ...s.backgroundOrb, width: 500, height: 500, top: -100, left: -120 }} />
-      <Box sx={{ ...s.backgroundOrb, width: 300, height: 300, bottom: 80, right: 100, background: accent.glow }} />
+      <Box sx={{ ...s.backgroundOrb, width: { xs: 300, md: 500 }, height: { xs: 300, md: 500 }, top: -100, left: -120 }} />
+      <Box sx={{ ...s.backgroundOrb, width: { xs: 200, md: 300 }, height: { xs: 200, md: 300 }, bottom: 80, right: 100, background: accent.glow }} />
 
       {/* Decorative grid */}
       <Box sx={s.decorGrid} />

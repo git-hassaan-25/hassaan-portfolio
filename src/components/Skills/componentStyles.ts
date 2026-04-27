@@ -33,7 +33,7 @@ export const getSkillsStyles = (mode: ThemeMode, accentPrimary: string, accentGl
     gap: 2,
   },
   card: {
-    p: 3.5,
+    p: { xs: 2.5, md: 3.5 },
     border: '1px solid',
     borderColor: 'divider',
     borderRadius: mode === 'aurora' ? '16px' : mode === 'chalk' ? '4px' : '2px',

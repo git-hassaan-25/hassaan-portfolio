@@ -79,7 +79,7 @@ export const getHeroStyles = (mode: ThemeMode, accentPrimary: string, accentGlow
     position: 'absolute' as const,
     right: 0,
     top: 0,
-    width: '45%',
+    width: { xs: '30%', md: '45%' },
     height: '100%',
     opacity: mode === 'chalk' ? 0.04 : 0.035,
     backgroundImage: `repeating-linear-gradient(0deg, currentColor, currentColor 1px, transparent 1px, transparent 60px),
