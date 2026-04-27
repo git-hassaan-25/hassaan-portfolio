@@ -14,7 +14,7 @@ export default function Contact() {
       <Box sx={s.innerGlow} />
 
       <Box sx={{ maxWidth: 1200, mx: 'auto', position: 'relative', zIndex: 1 }}>
-        <Typography sx={s.sectionLabel}>05 / Contact</Typography>
+        <Typography sx={s.sectionLabel}>06 / Contact</Typography>
         <Typography
           variant="h2"
           sx={{
@@ -68,7 +68,7 @@ export default function Contact() {
         <Box sx={s.footer}>
           <Typography sx={s.footerLogo}>HA.</Typography>
           <Typography sx={s.footerNote}>
-            © {new Date().getFullYear()} Hassaan Asim · Frontend Engineer
+            © {new Date().getFullYear()} Hassaan Asim · Full Stack Engineer
           </Typography>
         </Box>
       </Box>

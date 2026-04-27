@@ -38,3 +38,6 @@ turbo/
 out/
 public/build/
 *.tgz
+
+### Temporary
+tmpclaude*/

@@ -14,6 +14,20 @@ export interface ExperienceEntry {
   bullets: string[];
 }
 
+export interface EducationEntry {
+  degree: string;
+  institution: string;
+  year: string;
+  abbreviation?: string;
+}
+
+export interface ProjectEntry {
+  title: string;
+  description: string;
+  technologies: string[];
+  bullets: string[];
+}
+
 export interface NavItem {
   label: string;
   href: string;

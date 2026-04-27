@@ -16,7 +16,7 @@ export default function Hero() {
       <Box sx={s.decorGrid} />
 
       <Box sx={{ maxWidth: 1200, mx: 'auto', width: '100%', position: 'relative', zIndex: 1 }}>
-        <Typography sx={s.eyebrow}>Frontend Engineer · React & TypeScript</Typography>
+        <Typography sx={s.eyebrow}>Full Stack Engineer · React • TypeScript • Node.js</Typography>
 
         <Typography variant="h1" sx={{ ...s.headline, fontSize: { xs: '3.5rem', md: '6rem', lg: '7.5rem' } }}>
           Hassaan
@@ -25,8 +25,7 @@ export default function Hero() {
         </Typography>
 
         <Typography variant="body1" color="text.secondary" sx={s.subline}>
-          4+ years building scalable, high-performance web applications. Specialized in React
-          architecture, rendering optimization, and seamless API integration.
+          4+ years building scalable, high-performance web applications. Full-stack expertise in React, TypeScript, Node.js, and the MERN stack. Specialized in designing performant UIs, RESTful APIs, and seamless API integration with a focus on delivering production-ready solutions.
         </Typography>
 
         <Box sx={s.ctaRow}>

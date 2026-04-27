@@ -1,6 +1,6 @@
 import { ThemeMode } from '../../types';
 
-export const getExperienceStyles = (mode: ThemeMode, accentPrimary: string, accentSecondary: string, accentGlow: string) => ({
+export const getExperienceStyles = (_mode: ThemeMode, accentPrimary: string, accentSecondary: string, accentGlow: string) => ({
   section: {
     py: { xs: 10, md: 14 },
     px: { xs: 3, md: 8 },
