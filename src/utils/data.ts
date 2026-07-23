@@ -86,6 +86,17 @@ export const experiences: ExperienceEntry[] = [
 
 export const projects: ProjectEntry[] = [
   {
+    title: 'Josoor',
+    description: 'B2B marketplace platform with client storefront and admin console',
+    technologies: ['React 19', 'TypeScript', 'TanStack Router/Query', 'Tailwind CSS', 'Redux Toolkit'],
+    bullets: [
+      'Architected npm-workspaces monorepo separating client marketplace app, admin console, and shared UI/core/token packages',
+      'Built file-based routing with TanStack Router and data fetching with TanStack Query, including centralized error handling and query-key factories',
+      'Delivered full i18n/RTL support for English and Arabic with a custom i18n system and logical CSS properties',
+      'Developed a shadcn-style component library with Radix UI and cva variants, plus real-time features via SignalR and Firebase push notifications',
+    ],
+  },
+  {
     title: 'Mars Editor',
     description: 'Web-based CAT tool for translation management',
     technologies: ['React', 'TypeScript', 'GraphQL', 'Material-UI'],
