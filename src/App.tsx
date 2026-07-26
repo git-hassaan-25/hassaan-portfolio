@@ -1,40 +1,61 @@
-import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import { ThemeProvider } from './hooks/useThemeContext';
-import { useThemeContext } from './hooks/useThemeContext';
-import { themes } from './theme/themes';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Skills from './components/Skills/Skills';
-import Experience from './components/Experience/Experience';
-import Projects from './components/Projects/Projects';
-import Education from './components/Education/Education';
-import Contact from './components/Contact/Contact';
+import { MotionConfig } from 'framer-motion';
+import type { CSSProperties } from 'react';
+import { LenisProvider } from '@/hooks/useLenis';
+import { ThemeProvider } from '@/hooks/useTheme';
+import { AmbientBackground } from '@/components/layout/AmbientBackground';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { ScrollProgress } from '@/components/layout/ScrollProgress';
+import { Hero } from '@/components/sections/Hero';
+import { About } from '@/components/sections/About';
+import { Skills } from '@/components/sections/Skills';
+import { Experience } from '@/components/sections/Experience';
+import { Projects } from '@/components/sections/Projects';
+import { Education } from '@/components/sections/Education';
+import { Contact } from '@/components/sections/Contact';
 
-function AppContent() {
-  const { mode } = useThemeContext();
-  const theme = themes[mode];
-
-  return (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Header />
-      <main>
-        <Hero />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-    </MuiThemeProvider>
-  );
-}
+/** Both values are theme-driven CSS variables, so they're cast once here. */
+const GRAIN_STYLE = {
+  opacity: 'var(--grain-opacity)',
+  mixBlendMode: 'var(--grain-blend)',
+} as unknown as CSSProperties;
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    <MotionConfig reducedMotion="user">
+      <ThemeProvider>
+        <LenisProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[60] focus:rounded focus:bg-gold focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-bg"
+          >
+            Skip to content
+          </a>
+
+          <AmbientBackground />
+          <ScrollProgress />
+          <Header />
+
+          <main id="main">
+            <Hero />
+            <About />
+            <Skills />
+            <Experience />
+            <Projects />
+            <Education />
+            <Contact />
+          </main>
+
+          <Footer />
+
+          {/* Film grain — above content, below the header and menu so nav stays crisp. */}
+          <div
+            aria-hidden
+            style={GRAIN_STYLE}
+            className="pointer-events-none fixed inset-0 z-30 bg-noise"
+          />
+        </LenisProvider>
+      </ThemeProvider>
+    </MotionConfig>
   );
 }

@@ -4,15 +4,64 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hassaan Asim — Frontend Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&display=swap"
-      rel="stylesheet"
+    <title>Hassaan Asim — Full Stack Engineer</title>
+    <meta
+      name="description"
+      content="Hassaan Asim is a Full Stack Engineer in Lahore, Pakistan, building scalable, high-performance web applications with React, TypeScript and Node.js."
     />
+    <meta name="theme-color" content="#0A0A0A" />
+    <link rel="canonical" href="https://hassaanasim.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hassaan Asim — Full Stack Engineer" />
+    <meta
+      property="og:description"
+      content="Full Stack Engineer building scalable, high-performance web applications with React, TypeScript and Node.js."
+    />
+    <meta property="og:url" content="https://hassaanasim.dev" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Hassaan Asim — Full Stack Engineer" />
+    <meta
+      name="twitter:description"
+      content="Full Stack Engineer building scalable, high-performance web applications with React, TypeScript and Node.js."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hassaan Asim",
+        "jobTitle": "Full Stack Engineer",
+        "email": "mailto:hassaanasim25@gmail.com",
+        "telephone": "+923174949079",
+        "url": "https://hassaanasim.dev",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lahore",
+          "addressCountry": "PK"
+        }
+      }
+    </script>
   </head>
   <body>
+    <script>
+      // Applied before first paint so the stored theme never flashes.
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.dataset.theme = theme;
+          if (theme === 'light') {
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#F7F5F0');
+          }
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -1,49 +1,88 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  /* Obsidian — the signature dark theme. */
+  :root,
+  [data-theme='dark'] {
+    color-scheme: dark;
+    --c-bg: 10 10 10;
+    --c-surface: 17 17 17;
+    --c-raised: 22 22 22;
+    --c-line: 30 30 30;
+    --c-line-bright: 42 42 42;
+    --c-gold: 232 197 71;
+    --c-gold-bright: 242 218 126;
+    --c-gold-dim: 184 154 50;
+    --c-teal: 78 205 196;
+    --c-teal-dim: 46 139 133;
+    --c-text: 240 237 232;
+    --c-muted: 138 134 128;
+    /* #8A857B — 5.4:1, so tertiary labels stay readable, not just decorative. */
+    --c-faint: 138 133 123;
+    --grain-opacity: 0.035;
+    --grain-blend: overlay;
+  }
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
+  /*
+   * Soft light — warm paper rather than stark white. Gold and teal are
+   * darkened so they stay legible as text on a light surface (both clear
+   * 4.5:1 against the page background).
+   */
+  [data-theme='light'] {
+    color-scheme: light;
+    --c-bg: 247 245 240;
+    --c-surface: 255 255 255;
+    --c-raised: 241 238 231;
+    --c-line: 228 223 213;
+    --c-line-bright: 209 202 189;
+    /* #7A6210 — 5.4:1 on the page background; the brighter tints are for
+       hover/fills only, never for body text. */
+    --c-gold: 122 98 16;
+    --c-gold-bright: 143 115 20;
+    --c-gold-dim: 99 80 13;
+    /* #12746D — 5.2:1 */
+    --c-teal: 18 116 109;
+    --c-teal-dim: 14 95 90;
+    --c-text: 26 26 23;
+    --c-muted: 95 91 82;
+    /* #6E6A60 — 5.2:1, matching the dark theme's readable tertiary tone. */
+    --c-faint: 110 106 96;
+    /* Overlay with a dark noise texture muddies a pale page; multiply keeps it
+       as a clean paper tooth. */
+    --grain-opacity: 0.014;
+    --grain-blend: multiply;
+  }
 
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+  html {
+    /* Lenis owns smooth scrolling; native jumps under reduced motion */
+    scroll-behavior: auto;
+  }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+  body {
+    @apply overflow-x-hidden bg-bg font-body text-cream antialiased;
+  }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
+  ::selection {
+    @apply bg-gold/25 text-cream;
+  }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 4px;
-}
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-bg;
+  }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(128, 128, 128, 0.25);
-  border-radius: 2px;
-}
-
-::selection {
-  background: rgba(232, 197, 71, 0.25);
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--c-line-bright));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--c-muted));
+  }
 }

@@ -1,4 +1,4 @@
-export type ThemeMode = 'obsidian' | 'aurora' | 'chalk';
+export type ProjectId = 'josoor' | 'mars-editor' | 'devflow' | 'trueleads' | 'parker-auction';
 
 export interface SkillCategory {
   label: string;
@@ -21,11 +21,21 @@ export interface EducationEntry {
   abbreviation?: string;
 }
 
+export interface ProjectLinks {
+  live?: string;
+  github?: string;
+}
+
 export interface ProjectEntry {
+  id: ProjectId;
   title: string;
   description: string;
   technologies: string[];
   bullets: string[];
+  /** One-line architecture hook shown as a pull-quote on the project card. */
+  highlight: string;
+  /** Optional — link buttons render only when a URL is present. */
+  links?: ProjectLinks;
 }
 
 export interface NavItem {
